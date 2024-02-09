@@ -10,6 +10,9 @@ export default defineConfig({
         }),
         vue(),
     ],
+    build: {
+        manifest: 'manifest.json',
+      },
     resolve: {
         alias: {
             vue: 'vue/dist/vue.esm-bundler.js',

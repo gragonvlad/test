@@ -14,3 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
+// Route::get('/', function () {
+//     return view('ff');
+// });
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{
+     Route::get('/', 'FfController@show');
+});
