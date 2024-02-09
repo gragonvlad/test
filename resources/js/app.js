@@ -1,4 +1,6 @@
 import './bootstrap';
+
+import { createApp } from 'vue'
 app.mount('#app');
 const student = {
 	firstName: 'Anabel',

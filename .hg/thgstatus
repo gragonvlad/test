@@ -1,0 +1,14 @@
+r
+m.git
+m.git/logs
+m.git/logs/refs/heads
+m.git/logs/refs/remotes/origin
+r.git/objects/1d
+r.git/objects/7c
+r.git/objects/c9
+m.git/refs/heads
+m.git/refs/remotes/origin
+mresources/js
+mresources/views
+mroutes
+mvendor/composer

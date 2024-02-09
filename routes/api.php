@@ -20,3 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/frs1', [MyApp::class, 'index']);
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+Route::get('/account', function () {
+   return view('news');
+});
