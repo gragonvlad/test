@@ -16,7 +16,7 @@ class FlightController extends Controller
         //
         $flight = new Flight;
         $flight->setConnection('pgsql');
-   
+
         $something = $flight->find(1);
         return $something;
     }
@@ -24,6 +24,14 @@ class FlightController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    public function hello()
+    {
+        //return (print('gg'));// 1
+        //print "Hello world";
+        $resp = 'Datastore comp $resp';
+        $name = 'name';
+        return view('gg', ['name' => 'Hello world!'],  compact('resp'), compact('name'));
+    }
     public function create()
     {
         //
