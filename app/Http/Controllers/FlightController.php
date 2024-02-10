@@ -25,7 +25,14 @@ class FlightController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function refref()
+    public function view()
+    {
+        return view('compact')
+            ->with('name', 'John Doe')
+            ->with('age', 30)
+            ->with('address', '123 Main St');
+    }
+public function refref()
 {
     $name = 'John Doe';
     $age = 30;
