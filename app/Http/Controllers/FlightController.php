@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Flight;
 use App\Http\Requests\StoreFlightRequest;
 use App\Http\Requests\UpdateFlightRequest;
+use Illuminate\Support\Collection;
 
 class FlightController extends Controller
 {
@@ -24,6 +25,14 @@ class FlightController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    public function refref()
+{
+    $name = 'John Doe';
+    $age = 30;
+    $address = '123 Main St';
+    
+    return view('compact', compact(['name', 'age', 'address']));
+}
     public function hello()
     {
         //return (print('gg'));// 1

@@ -41,3 +41,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
      Route::get('/hello', 'FlightController@hello');
 });
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{
+     Route::get('/compact', 'FlightController@refref');
+});
