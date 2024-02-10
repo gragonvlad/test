@@ -9,10 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
-    use HasUuids;
 
-    protected $table = 'newtable';
-    protected $primaryKey = 'id';
-    protected $fillable = ['menu', 'link'];
-    protected $casts = ["id" => "string"];
+
+
 }

@@ -32,5 +32,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      Route::get('/{about}', function (string $about) {
           return view('about');
      })->whereIn('about', ['about', 'test']);
-     Route::get('/about2', 'FlightController@create');
+     Route::get('/about2', function() {
+          $products = DB::table("flights")->get();
+          dd($products);
+     });
 });

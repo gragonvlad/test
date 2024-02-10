@@ -9,6 +9,14 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 class Flight extends Model
 {
     use HasUuids;
+    protected $fillable = [
+         'link',
+         'menu',
+         'creation_date',
+         'updated_date',
+         'options->enabled'
+    ];
+    use HasFactory;
     protected $table = 'my_flights';
     public $incrementing = false;
     protected $keyType = 'string';
@@ -17,10 +25,9 @@ class Flight extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'updated_date';
     protected $connection = 'pgsql';
-	protected $fillable = [
-    'options->enabled',
-];
+
 }
+
 $flight = Flight::create(['title' => 'Traveling to Europe']);
 $flight = Flight::create([
     'name' => 'London to Paris',
