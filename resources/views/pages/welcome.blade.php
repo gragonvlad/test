@@ -1,6 +1,8 @@
 
 @extends('app')
 @section('content')
+<html>
+
 <!-- <template>
 <head>
 <script setup>

@@ -8,7 +8,9 @@ r.git/objects/7c
 r.git/objects/c9
 m.git/refs/heads
 m.git/refs/remotes/origin
+mdatabase/seeders
+mresources/css
 mresources/js
-mresources/views
+rresources/views
 mroutes
 mvendor/composer

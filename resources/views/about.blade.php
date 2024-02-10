@@ -11,14 +11,11 @@
         <a class="active" :hover href="#home">Home</a>
         <a class="menu" :hover href="#news">News</a>
         <a class="menu" :hover href="#contact">Contact</a>
-        <a class="menu" :hover href="/about">About</a>
+        <a class="menu" :hover href="#about">About</a>
 </div>
 
 </body>
-<h1 class="data">{{$data}}</h1>
-<h2 class="cursive">Cursive</h2>
-<h2 class="times">Times New Roman</h2>
 
-<ff datall="{{$data}}"></ff>
+<h1 class="hh">Test worked</h1>
 
 @endsection

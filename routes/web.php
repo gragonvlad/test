@@ -20,5 +20,15 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
-     Route::get('/', 'FfController@show');
+     Route::get('/dd', 'FfController@show');
+});
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{
+     Route::get('/gg', 'FfController@store');
+});
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{
+     Route::get('/about', function () {
+          return view('about');
+     });
 });
