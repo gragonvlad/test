@@ -16,7 +16,9 @@ class FlightController extends Controller
         //
         $flight = new Flight;
         $flight->setConnection('pgsql');
-        dd($flight);
+   
+        $something = $flight->find(1);
+        return $something;
     }
 
     /**
