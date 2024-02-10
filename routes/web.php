@@ -24,7 +24,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 });
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
-     Route::get('/gg', 'FfController@store');
+     Route::get('/gg', 'FlightController@index');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()

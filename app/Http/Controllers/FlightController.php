@@ -14,6 +14,9 @@ class FlightController extends Controller
     public function index()
     {
         //
+        $flight = new Flight;
+        $flight->setConnection('pgsql');
+        dd($flight);
     }
 
     /**

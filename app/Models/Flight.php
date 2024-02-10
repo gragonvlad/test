@@ -17,7 +17,7 @@ class Flight extends Model
          'options->enabled'
     ];
     use HasFactory;
-    protected $table = 'my_flights';
+    protected $table = 'flights';
     public $incrementing = false;
     protected $keyType = 'string';
     public $timestamps = false;
@@ -28,8 +28,5 @@ class Flight extends Model
 
 }
 
-$flight = Flight::create(['title' => 'Traveling to Europe']);
-$flight = Flight::create([
-    'name' => 'London to Paris',
-]);
-$flight->id; // "8f8e8478-9035-4d23-b9a7-62f4d2612ce5"
+
+
