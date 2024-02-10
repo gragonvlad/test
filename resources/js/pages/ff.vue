@@ -5,6 +5,7 @@
       </div>
 </div>
 
+Hello, @{{name}}.
 <h1>Here are many child components! {{datall}}</h1>
 <!-- <ExampleComponent /> -->
 </template>
