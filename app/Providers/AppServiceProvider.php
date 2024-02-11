@@ -3,6 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+/* new code line*/
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Connection;
+use Illuminate\Support\Facades\Log;
+/* end new code line*/
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        //create new line
+DB::whenQueryingForLongerThan(500, function (Connection $connection) {
+            Log::info("Database queries exceeded 5 seconds on {$connection->getName()}");
+        });
+            //end create
     }
 }

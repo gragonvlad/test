@@ -25,8 +25,16 @@ class Flight extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'updated_date';
     protected $connection = 'pgsql';
-
+    protected function create(array $data)
+    {
+        return Flight::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+    }
 }
+
 
 
 

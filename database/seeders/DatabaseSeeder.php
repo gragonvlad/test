@@ -12,7 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
+$this->call(FlightSeeder::class); /* man     $this->call([
+        UserSeeder::class,
+        PostSeeder::class,
+        CommentSeeder::class,
+    ]);*/
         \App\Models\User::factory(10)->create();
 \App\Models\Todo::factory(10)->create();
         // \App\Models\User::factory()->create([

@@ -8,10 +8,10 @@
     <div class="nav">
         
     <a class="activer" href="/"><img src="smiley.png"></a>
-        <a class="active" :hover href="#home">Home</a>
-        <a class="menu" :hover href="#news">News</a>
-        <a class="menu" :hover href="#contact">Contact</a>
-        <a class="menu" :hover href="#about">About</a>
+        <a class="active" href="#home">Home</a>
+        <a class="menu" href="#news">News</a>
+        <a class="menu" href="#contact">Contact</a>
+        <a class="menu" href="#about">About</a>
 </div>
 
 </body>

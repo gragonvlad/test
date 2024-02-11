@@ -5,7 +5,7 @@
       </div>
 </div>
 
-Hello, @{{name}}.
+
 <h1>Here are many child components! {{datall}}</h1>
 <!-- <ExampleComponent /> -->
 </template>
@@ -15,6 +15,7 @@ Hello, @{{name}}.
 const props = defineProps({
     datall: String,
 })
+
 console.log('test', props);
 </script>
 <style>
@@ -39,7 +40,9 @@ background-color: black;
     a.active:hover{
 background-color: blue;
 color:black;
+
     }
+    
     a.menu:hover{
 background-color: blue;
 color:black;
@@ -90,13 +93,18 @@ color:white;
     }
 
 </style>
-<!-- <script>
+<script>
     import ExampleComponent from '../components/ExampleComponent.vue'
 
     export default {
         props: ['datall'],
+        methods: {
+            onHover: function (event) {
+                event.target.style.color = 'red'
+            }
+        },
        created() {
             console.log(this.datall)
         },
 }
-</script> -->
+</script>
