@@ -15,6 +15,23 @@
 const props = defineProps({
     datall: String,
 })
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btn');
+
+  console.log(btn); // HTMLButtonElement object
+
+  // ✅ Works as expected
+  btn.addEventListener('mousemove', () => {
+    //alert('You mousemove the button');
+    document.getElementById("btn").style.backgroundColor = "red";
+  });
+  btn.addEventListener('click', () => {
+    alert('You click the button');
+    document.getElementById("btn").style.backgroundColor = "yellow";
+  });
+  btn.removeEventListener('click', handleMouseClick);
+});
+
 
 console.log('test', props);
 </script>
@@ -42,15 +59,27 @@ background-color: blue;
 color:black;
 
     }
-    
+
+    input.dd:focus {
+  background-color: lightblue;
+}
+input.dd:focus-visible {
+  outline: 5px solid crimson;
+  border-radius: 5px;
+}
+label.dd:focus-within {
+  font-weight: bold;
+} /*text side*/
     a.menu:hover{
 background-color: blue;
 color:black;
+
 
     }
     a.menu {
  float:left;
  color: #f2f2f2;
+ 
  text-align:center;
  padding: 14px 16px;
  text-decoration: none;
