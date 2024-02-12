@@ -6,12 +6,6 @@
 <title>Test</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 /*<meta name="keywords" content="важные, ключевые, слова"> // увы тут нет ключевых слов*/
-<form method="get" action="{{ route('FfController@file') }}"
-enctype="multipart/form-data" >
-@csrf
-<input type="file" name="file" value="daily-batch.txt" />
-<input type="submit" value="Upload" />
-</form>
 <header>
 <body class="menu">
 
