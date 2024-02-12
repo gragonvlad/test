@@ -16,7 +16,6 @@
 const props = defineProps({
     datall: String,
 })
-
 function modifyArray(arr) {
   // Create a new copy of the array
   const modifiedArray = [...arr];
@@ -38,7 +37,6 @@ state.timestamps.push(newTimeStamp);
 }
 }
 //console.log(state);
-declare(strict_types=1);
 
 const originalArray = ['item 1', 'item 2'];
 
