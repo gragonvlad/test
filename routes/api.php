@@ -23,6 +23,7 @@ Route::get('/frs1', [MyApp::class, 'index']);
 Route::get('/welcome', function () {
     return view('pages/welcome');
 });
+
 Route::get('/account', function () {
    return view('news');
 });

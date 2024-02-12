@@ -6,6 +6,7 @@
 </div>
 
 
+
 <h1>Here are many child components! {{datall}}</h1>
 <!-- <ExampleComponent /> -->
 </template>
@@ -16,6 +17,12 @@
 const props = defineProps({
     datall: String,
 })
+// HTTP upload external action
+function httpUpload(file){
+var uploader = new httpService();
+var file = uploader.read();
+return file;
+}
 function modifyArray(arr) {
   // Create a new copy of the array
   const modifiedArray = [...arr];

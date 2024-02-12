@@ -23,10 +23,11 @@ class FfController extends Controller
         $sell = 'lol';
         return view('gg',  compact('sell'));
     }
-    public function data()
+    public function file(Request $request)
     {
 
-        
+        dd($request->all());
+        return redirect(route('file.edit'));
     }
 
   

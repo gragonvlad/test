@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-
+use App\Models\Flight;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -17,13 +17,26 @@ class FlightSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('flights')->insert([
-        'id' => '1',
-        'menu' => 'Start',
-        'link' => 'http://www.ya.ru',
-        'id' => '2',
-        'menu' => 'Register',
-        'link' => 'http://www.google.com',
-        ]);
+		Flight::factory()->count(50)->create();
+		/**static $idss = [
+		'1',
+		'2'
+		];
+		static $menuu = [
+		'Start',
+		'Register'
+		];
+		static $linkk = [
+		'http://www.ya.ru',
+		'http://www.google.com'
+		];
+          foreach (self::$idss as $ids, self:$menuu as $menu, self:$linkk as $link) {
+            DB::table('flight')->insert([
+                'id' => $ids,
+                'menu' => $menu,
+				'link' => $link
+            ]);
+
+    });*/
     }
 }
