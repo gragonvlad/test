@@ -12,9 +12,37 @@
 <script setup>
     import ExampleComponent from '../components/ExampleComponent.vue'
 // import legacy from '@vitejs/plugin-legacy'
+
 const props = defineProps({
     datall: String,
 })
+function modifyArray(arr) {
+  // Create a new copy of the array
+  const modifiedArray = [...arr];
+
+  // Make modifications to the new array
+  modifiedArray.push('new item');
+
+  // Return the modified array
+  return modifiedArray;
+}
+const mutations = {
+ADD_NOTE (state, payload) {
+let newNote = payload;
+state.notes.push(newNote);
+},
+ADD_TIMESTAMP (state, payload) {
+let newTimeStamp = payload;
+state.timestamps.push(newTimeStamp);
+}
+}
+
+const originalArray = ['item 1', 'item 2'];
+
+const modifiedArray = modifyArray(originalArray);
+
+console.log(originalArray); // ['item 1', 'item 2']
+console.log(modifiedArray); // ['item 1', 'item 2', 'new item']
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('btn');
 
@@ -29,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('You click the button');
     document.getElementById("btn").style.backgroundColor = "yellow";
   });
-  btn.removeEventListener('click', handleMouseClick);
+  
 });
 
 

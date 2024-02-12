@@ -1,8 +1,11 @@
 
 @extends('app')
 @section('content')
+<html lang="ru">
+<!DOCTYPE html>
+<title>About</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<header>
 <body class="menu">
 
     <div class="nav">
@@ -15,7 +18,12 @@
 </div>
 
 </body>
-
+</header>
+<main>
 <h1 class="hh">Test worked</h1>
+</main>
+<footer>
+<h1>@2024</h1>
+</footer>
 
 @endsection

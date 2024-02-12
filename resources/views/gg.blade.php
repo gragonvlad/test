@@ -1,11 +1,14 @@
 
 @extends('app')
 @section('content')
-
+<html lang="ru">
+<!DOCTYPE html>
+<title>Welcome</title>
+<main>
 <h1>{{$resp}}</h1>
 
 <test selall="{{$resp}}"></test>
 <h2>Test</h2>
 <h2>Greeting php {{$name}}</h2>
-
+</main>
 @endsection
