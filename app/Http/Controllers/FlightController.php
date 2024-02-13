@@ -73,10 +73,10 @@ public function refref()
     public function show(Flight $flight)
     {
         //
-        $flight = new Flight;
-        $flight->setConnection('pgsql');
+     //   $flight = new Flight;
+       // $flight->setConnection('pgsql');
 
-        $flight = DB::table('flights')->get();
+        //$flight = DB::table('flights')->get();
 
 //foreach ($flight as $fligh) {
     //echo $fligh->link;
@@ -95,15 +95,19 @@ public function refref()
 //$email = DB::table('flights')->where('id', '2008')->value('id');
 
 //echo $email;
-$flight = DB::table('flights')
-->orderby('id', 'asc')
-->get()->dd();
-echo $flight;
-    }
+//$flight = DB::table('flights')
+//->orderby('id', 'asc')
+//->get()->dd();
+//echo $flight;
+  //  }
 
     /**
      * Show the form for editing the specified resource.
      */
+    $menu = new Flight;
+    $menu = DB::table('flights')->where('id', '2008')->value('menu');
+    return view('gg', ['name' => 'Hello world!'],  compact('menu'));
+}
     public function edit(Flight $flight)
     {
         //
