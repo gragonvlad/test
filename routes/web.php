@@ -28,6 +28,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 });
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
+     Route::get('/fly', 'FlightController@show');
+});
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{
      Route::get('/test22', 'FfController@file');
 });
 Route::group(['namespace' => 'App\Http\Controllers'], function()

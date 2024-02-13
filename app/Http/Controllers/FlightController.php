@@ -6,7 +6,9 @@ use App\Models\Flight;
 use App\Http\Requests\StoreFlightRequest;
 use App\Http\Requests\UpdateFlightRequest;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Schema;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 class FlightController extends Controller
 {
     /**
@@ -71,6 +73,32 @@ public function refref()
     public function show(Flight $flight)
     {
         //
+        $flight = new Flight;
+        $flight->setConnection('pgsql');
+
+        $flight = DB::table('flights')->get();
+
+//foreach ($flight as $fligh) {
+    //echo $fligh->link;
+    //return get_object_vars($fligh);
+  
+
+    //echo $fligh->link;
+//}
+
+
+//echo $flight;
+//$user = new Flight;
+//$user->setConnection('pgsql');
+//$user = DB::table('flights')->find(1);
+//echo $user;
+//$email = DB::table('flights')->where('id', '2008')->value('id');
+
+//echo $email;
+$flight = DB::table('flights')
+->orderby('id', 'asc')
+->get()->dd();
+echo $flight;
     }
 
     /**
