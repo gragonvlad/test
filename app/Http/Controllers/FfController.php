@@ -16,6 +16,7 @@ class FfController extends Controller
    {
         $data = 'Segoe';
         return view('ff',  compact('data'));
+        
     }
     
     public function shows()

@@ -16,19 +16,8 @@
         <a class="menu" href="#contact">Contact</a>
         <a class="menu" href="#about">About</a>
 </div>
-<form class="level-form">
-    <div class="level-form__slider" id="slider"></div>
-    <p class="level-form__field">
-        <label class="level-from__label">Цена</label>
-        <input class="level-form__value" type="text">
-</p>
-<p class="level-form__field">
-    <label>
-        <input class="level-form__special" type="checkbox"> test
-</label>
-</p>
-</form>
 
+<ffa></ffa>
 </body>
 </header>
 <main>

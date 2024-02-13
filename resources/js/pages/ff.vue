@@ -11,81 +11,13 @@
 </template>
 <script setup>
     import ExampleComponent from '../components/ExampleComponent.vue'
+    import SliderComponent from '../components/SliderComponent.vue'
 // import legacy from '@vitejs/plugin-legacy'
 
 const props = defineProps({
     datall: String,
 })
-function modifyArray(arr) {
-  // Create a new copy of the array
-  const modifiedArray = [...arr];
 
-  // Make modifications to the new array
-  modifiedArray.push('new item');
-
-  // Return the modified array
-  return modifiedArray;
-}
-const mutations = {
-ADD_NOTE (state, payload) {
-let newNote = payload;
-state.notes.push(newNote);
-},
-ADD_TIMESTAMP (state, payload) {
-let newTimeStamp = payload;
-state.timestamps.push(newTimeStamp);
-}
-}
-
-const sliderElement = document.querySelector('.level-form__slider');
-const valueElement =  document.querySelector('.level-form__value');
-const specialElement =  document.querySelector('.level-form__special');
-valueElement.value = 80;
-
-noUiSlider.create(sliderElement, {
-    range: {
-        min:0,
-        max:100,
-    },
-    start: 80,
-    step: 1,
-    connect: 'lower',
-    });
-sliderElement.noUiSlider.on('update', () => {
-    valueElement.value = sliderElement.noUiSlider.get();
-});
-
-specialElement.addEventListener('change', (evt) => {
-    if (evt.target.checked) {
-        sliderElement.noUiSlider.updateOptions({
-            range: {
-                min: 0,
-                max: 10,
-            },
-            stop: 0.1,
-        });
-        valueElement.value = 8;
-    } else {
-        sliderElement.noUiSlider.updateOptions({
-            range: {
-                min: 0,
-                max: 100,
-            },
-            step: 1,
-
-        });
-        sliderElement.noUiSlider.set(80);
-
-    }
-});
-//console.log(state);
-
-const originalArray = ['item 1', 'item 2'];
-
-const modifiedArray = modifyArray(originalArray);
-
-console.log(originalArray); // ['item 1', 'item 2']
-console.log(modifiedArray); // ['item 1', 'item 2', 'new item']
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('btn');
 
@@ -195,6 +127,7 @@ color:white;
 </style>
 <script>
     import ExampleComponent from '../components/ExampleComponent.vue'
+    
 
     export default {
         props: ['datall'],

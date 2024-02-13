@@ -9,6 +9,7 @@
 </template>
 <script setup>
 import NewComponent from '../components/NewComponent.vue'
+
 // import legacy from '@vitejs/plugin-legacy'
 const props = defineProps({
     sellall: String,
