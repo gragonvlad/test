@@ -106,7 +106,14 @@ public function refref()
      */
     $menu = new Flight;
     $menu = DB::table('flights')->where('id', '2008')->value('menu');
-    return view('gg', ['name' => 'Hello world!'],  compact('menu'));
+    $textss = "Петров Иван<br>Родился</br>";
+    $limoncount = 3;
+    $banancount = 5;
+    $summbanalimon = $limoncount + $banancount;
+    return view('gg', ['name' => 'Hello world!'],  compact("menu", "textss", "summbanalimon"));
+
+   
+
 }
     public function edit(Flight $flight)
     {

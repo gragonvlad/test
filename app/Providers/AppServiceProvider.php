@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use App\Models\Flight;
 use Illuminate\Support\ServiceProvider;
 /* new code line*/
 use Illuminate\Support\Facades\DB;
@@ -24,7 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //create new line
+        Flight::observe(Article::class);
+		//create new line
 DB::whenQueryingForLongerThan(500, function (Connection $connection) {
             Log::info("Database queries exceeded 5 seconds on {$connection->getName()}");
         });

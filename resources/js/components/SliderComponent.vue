@@ -37,6 +37,7 @@
 
 const props = defineProps({
     datall: String,
+    menu: String,
 })
 function modifyArray(arr) {
   // Create a new copy of the array

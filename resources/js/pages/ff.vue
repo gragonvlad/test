@@ -9,13 +9,28 @@
 <h1>Here are many child components! {{datall}}</h1>
 <!-- <ExampleComponent /> -->
 </template>
+
 <script setup>
     import ExampleComponent from '../components/ExampleComponent.vue'
     import SliderComponent from '../components/SliderComponent.vue'
 // import legacy from '@vitejs/plugin-legacy'
 
+
+import { ref } from 'vue'
+
+const a = 1
+const b = ref(2)
+
+defineExpose({
+  a,
+  b
+})
+console.log(a);
+
 const props = defineProps({
     datall: String,
+    textss: String,
+    summbanalimon: String,
 })
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -130,7 +145,7 @@ color:white;
     
 
     export default {
-        props: ['datall'],
+        props: ['datall', 'textss', 'summbanalimon'],
         methods: {
             onHover: function (event) {
                 event.target.style.color = 'red'

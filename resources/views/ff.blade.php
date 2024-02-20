@@ -17,7 +17,9 @@
     <a class="menu" href="#contact">Contact</a>
     <a class="menu" href="/about">About</a>
 </div>
-
+<div id="app" class="demo">
+  <my-title blog-title="Шикарный Vue"></my-title>
+</div>
 </body>
 </header>
 <main>
