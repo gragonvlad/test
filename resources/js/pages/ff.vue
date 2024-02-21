@@ -32,7 +32,7 @@ const props = defineProps({
     textss: String,
     summbanalimon: String,
 })
-
+console.log('Привет, мир!');
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('btn');
 

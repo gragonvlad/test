@@ -56,3 +56,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
      Route::get('/view', 'FlightController@view');
 });
+Route::get('/work', function() {
+     return view('work');
+});
