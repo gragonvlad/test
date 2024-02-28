@@ -15,7 +15,8 @@ return new class extends Migration
 		 $table->integer('id')->unsigned();
 		 $table->string('link');
 		 $table->string('menu');
-		 $table->timestamps();//
+		 $table->timestamps();
+         $table->timestamp('deleted_at');
         });
     }
 

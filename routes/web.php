@@ -26,13 +26,19 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
      Route::get('/gg', 'FlightController@index');
 });
+
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
-     Route::get('/fly', 'FlightController@show');
+     Route::resource('/fly', 'FlightController')->names('FlightTest');
 });
+// Route::resource('/fly', 'FlightController')->names('FlightTest');
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
      Route::get('/test22', 'FfController@file');
+});
+Route::group(['namespace' => 'App\Http\Controllers\Blog', 'prefix' => 'blog'], function()
+{
+     Route::resource('posts', 'PostController')->names('blog.posts');
 });
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {

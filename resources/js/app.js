@@ -2,10 +2,20 @@ import './bootstrap';
 
 import { createApp } from 'vue/dist/vue.esm-bundler'
 let app = createApp();
+
+
+import PrimeVue from 'primevue/config';
 import ff from './pages/ff.vue'; 
 import test from './pages/test.vue'; 
 
-
+app.use(PrimeVue, {
+    zIndex: {
+        modal: 1100,        //dialog, sidebar
+        overlay: 1000,      //dropdown, overlaypanel
+        menu: 1000,         //overlay menus
+        tooltip: 1100       //tooltip
+    }
+});
 
 const student = {
 	firstName: 'Anabel',

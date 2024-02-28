@@ -4,14 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class Flight extends Model
+
+class BlogPost extends Model
 {
-    use HasFactory;
     use SoftDeletes;
-    
-   
+    use HasFactory;
     protected $table = 'flights';
     protected $fillable = [
         'id',
@@ -53,7 +51,7 @@ class Flight extends Model
 
     protected function create(array $data)
     {
-        return Flight::create([
+        return BlogPost::create([
             'id' => $data['id'],
             'name' => $data['name'],
             'email' => $data['email'],
@@ -61,7 +59,3 @@ class Flight extends Model
         ]);
     }
 }
-
-
-
-

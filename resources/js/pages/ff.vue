@@ -1,22 +1,40 @@
 <template>
 <div class="flex-center position-ref full-height">
+    
        <div class="content">
           <example-component></example-component>
-      </div>
-</div>
+         
 
+      </div>
+      <Calendar v-model="date" dateFormat="dd.mm.yy"  today :minDate="null" hourPicker :numberOfMonths="2" yearRange="2000:2030" :showTime="true" :showButtonBar="true" :unstyled="false" />
+</div>
+<head></head>
 
 <h1>Here are many child components! {{datall}}</h1>
 <!-- <ExampleComponent /> -->
 </template>
 
+
 <script setup>
-    import ExampleComponent from '../components/ExampleComponent.vue'
-    import SliderComponent from '../components/SliderComponent.vue'
+import StyleClass from 'primevue/styleclass';
+
+
+    import SliderComponent from '../components/slidercomponent.vue';
+    import NewComponent from '../components/NewComponent.vue';
+    import PrimeVue from 'primevue/config';
 // import legacy from '@vitejs/plugin-legacy'
 
 
+import Calendar from 'primevue/calendar';
+
 import { ref } from 'vue'
+
+const date = defineModel();
+//console.log(Object.keys(window));
+const now = new Date();
+const Hour = now.getHours();
+const Minute = now.getMinutes();
+const today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes());
 
 const a = 1
 const b = ref(2)
@@ -30,6 +48,9 @@ console.log(a);
 const props = defineProps({
     datall: String,
     textss: String,
+    numberOfMonths: Number,
+    showTime: Boolean,
+    showButtonBar: String,
     summbanalimon: String,
 })
 console.log('Привет, мир!');
@@ -51,9 +72,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
 console.log('test', props);
 </script>
 <style>
+.p-datepicker table td.p-datepicker-today > span {
+  background-color: burlywood;
+}
+.p-datepicker table td > span {
+  background-color: orange;
+}
+.p-inputtext
+{
+    background-color: yellowgreen;
+}
+.my-switch-slider {
+    border-radius: 0;
+}
+
+.my-switch-slider:before {
+    border-radius: 0;
+}
+.p-datepicker-group-container, .p-minute-picker, .p-hour-picker
+{
+    background-color: red;
+}
     h1.hh
     {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -145,14 +188,23 @@ color:white;
     
 
     export default {
-        props: ['datall', 'textss', 'summbanalimon'],
+        props: ['datall', 'textss', 'summbanalimon', 'numberOfMonths', 'showTime'],
+
         methods: {
             onHover: function (event) {
                 event.target.style.color = 'red'
             }
         },
+        head: {
+        script: [{
+            src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js',
+                type: 'application/javascript'
+        }]
+    },
        created() {
             console.log(this.datall)
         },
+        
 }
+
 </script>

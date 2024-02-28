@@ -19,7 +19,8 @@ class ArticleObserver
      */
     public function updated(Flight $flight): void
     {
-        //
+        $flight = User::find(1);
+$flight->save(); //
     }
 
     /**

@@ -18,7 +18,7 @@
     <a class="menu" href="/about">About</a>
 </div>
 <div id="app" class="demo">
-  <my-title blog-title="Шикарный Vue"></my-title>
+  
 </div>
 </body>
 </header>
@@ -26,6 +26,8 @@
 <button id="btn">Sign up</button>
 <h1 class="data">{{$data}}</h1>
 <h2 class="cursive">Cursive</h2>
+
+
 <h2 class="times">Times New Roman</h2>
 <label class="dd">Test colm name: <input name="firstName" class="dd" type="text" /></label>
 <ff datall="{{$data}}"></ff>

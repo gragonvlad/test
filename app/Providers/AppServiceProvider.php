@@ -3,6 +3,7 @@
 namespace App\Providers;
 use App\Models\Flight;
 use Illuminate\Support\ServiceProvider;
+use App\Observers\ArticleObserver;
 /* new code line*/
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Connection;

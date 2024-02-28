@@ -17,11 +17,16 @@ class FlightController extends Controller
     public function index()
     {
         //
-        $flight = new Flight;
+       /* $flight = new Flight;
         $flight->setConnection('pgsql');
 
         $something = $flight->find(1);
-        return $something;
+        return $something;*/
+      //  dd( var: 1);
+      $items = Flight::all();
+      dd($items->first());
+      //return view('gg', ['name' => 'Hello woreld!'],  compact("menu", "textss", "summbanalimon", 'items'));
+      return view('gg', compact("menu", "textss", "summbanalimon", 'items'));
     }
 
     /**
@@ -74,16 +79,16 @@ public function refref()
     {
         //
      //   $flight = new Flight;
-       // $flight->setConnection('pgsql');
+    //    $flight->setConnection('pgsql');
 
-        //$flight = DB::table('flights')->get();
-
+//        $flight = DB::table('flights')->get();
+       
 //foreach ($flight as $fligh) {
-    //echo $fligh->link;
-    //return get_object_vars($fligh);
+    // $fligh->link;
+  //  return get_object_vars($flight);
   
 
-    //echo $fligh->link;
+   // echo $fligh->link;
 //}
 
 
@@ -97,20 +102,24 @@ public function refref()
 //echo $email;
 //$flight = DB::table('flights')
 //->orderby('id', 'asc')
-//->get()->dd();
-//echo $flight;
-  //  }
+//->get();
+//$items=$flight->dd();
+  //}
 
     /**
      * Show the form for editing the specified resource.
      */
-    $menu = new Flight;
-    $menu = DB::table('flights')->where('id', '2008')->value('menu');
+  //  $menu = new Flight;
+  //  $menu = DB::table('flights')->where('id', '2008')->value('menu');
     $textss = "Петров Иван<br>Родился</br>";
     $limoncount = 3;
     $banancount = 5;
     $summbanalimon = $limoncount + $banancount;
-    return view('gg', ['name' => 'Hello world!'],  compact("menu", "textss", "summbanalimon"));
+   // return view('gg', ['name' => 'Hello woreld!'],  compact("menu", "textss", "summbanalimon", 'items'));
+   $items = FlightTest::all();
+   dd($items);
+   //return view('gg', ['name' => 'Hello woreld!'],  compact("menu", "textss", "summbanalimon", 'items'));
+   return view('gg.show', compact("menu", "textss", "summbanalimon", 'items'));
 
    
 

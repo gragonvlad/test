@@ -1,18 +1,18 @@
 
 @extends('app')
-@section('content')
-<html lang="ru">
-<!DOCTYPE html>
-<title>{{$menu}}</title>
-<main>
-<h1></h1>
-<sil></sil>
-<? echo 'Петров Иван<br>Родился</br>' ?>
-<test selall="{{$menu}}"></test>
 
-<a class="active" href="#home">{{$menu}}</a>
-<?php echo ("Петров Иван<br>Родился</br>"); ?>
-<h2>Test</h2>
-<h2>Greeting php {{$name}} {{$textss}} Количество фруктов:{{$summbanalimon}}</h2>
-</main>
+@section('content')
+<table>
+
+@foreach($blogs as $blog)
+<tr>
+    <td>{{ $blog->id }}</td>
+    <td>{{ $blog->link }}</td>
+    <td>{{ $blog->menu }}</td>
+</tr>
+@endforeach
+
+
+</table>
+
 @endsection

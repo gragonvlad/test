@@ -23,7 +23,8 @@ class FlightFactory extends Factory
      'link' => $this->faker->url(),
      'menu' => $this->faker->name(),
      'created_at' => $this->faker->dateTimeAD(),
-     'updated_at' => $this->faker->dateTimeAD()//
+     'updated_at' => $this->faker->dateTimeAD(),
+     'deleted_at' => $this->faker->dateTimeAD()
         ];
     }
 }
