@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Flight extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+   // use SoftDeletes;
     
    
     protected $table = 'flights';
@@ -47,7 +47,7 @@ class Flight extends Model
             'menu'    => 'required|menu|max:255|unique:link',
             'creation_at' => 'required|max:255|confirmed',
             'deleted_at' => 'required|max:255|confirmed',
-            'terms'    => 'required',
+            'terms'    => 'required'
         ]);
     }
 

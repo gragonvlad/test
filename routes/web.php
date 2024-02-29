@@ -31,6 +31,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
      Route::resource('/fly', 'FlightController')->names('FlightTest');
 });
+Route::get('/ffffff', function () {
+
+     return view('welcome', ['users' => App\Models\BlogPost::all()]);
+ 
+ });
 // Route::resource('/fly', 'FlightController')->names('FlightTest');
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {

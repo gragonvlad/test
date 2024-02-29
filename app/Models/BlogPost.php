@@ -3,12 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BlogPost extends Model
 {
-    use SoftDeletes;
+  /**   use SoftDeletes;*/
     use HasFactory;
     protected $table = 'flights';
     protected $fillable = [
@@ -18,17 +21,17 @@ class BlogPost extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-        'options->enabled'
+        'options->enabled',
    ];
    protected $dates = [
 'created_at',
 'updated_at',
-'deleted_at'
+'deleted_at',
    ];
     protected $primaryKey = 'id';
     protected $appends = [
         'testjson1',
-        'testjson2'
+        'testjson2',
     ];
     protected $dateFormat = 'U';
     public $incrementing = false;
@@ -48,7 +51,13 @@ class BlogPost extends Model
             'terms'    => 'required',
         ]);
     }
-
+   static public function author(): BelongsTo
+   {
+       return $this->belongsTo(BlogPost::class);
+    }
+   static public function getProducts() {
+        return BlogPost::all();
+    }
     protected function create(array $data)
     {
         return BlogPost::create([

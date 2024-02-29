@@ -17,24 +17,71 @@ class PostController extends BaseController
      */
     public function index()
     {
+
+//$blogs = DB::table('flights')
+//->orderby('id', 'asc')
+//->get()->dd();
+//echo $blogs;
+//return view('gg', compact('blogs')); //
+//    }
+
+
+
       // $items = BlogPost::all();
-    //  $blogs = new BlogPost;
-   //   $blogs = DB::table('flights')->get();
+    //  $users = new BlogPost;
+      
+   //   $blogs->setConnection('pgsql');
+   // $blogs = DB::table('flights');
    
-    //    $blogs->setConnection('pgsql');
       //  $blogs = DB::table('flights')->get();
     //  $blogs = BlogPost::all()->toArray();
-   // $ff = BlogPost::where('id', '1')->get();
-   // print $ff;
-   $bloges = BlogPost::all();  // this connect ctronllers\blog\app
-      // return view('gg', compact('blogs')); //
-      print(dd($bloges));
+ //   $ff = BlogPost::where('id', '1')->get();
+  // print dd($blogs);
+  //$bloges = BlogPost::getProducts();  // this connect ctronllers\blog\app
+  //     return view('gg', compact('blogs')); //
+      
+  //    foreach ($bloges as $bloge) {
+   //     dump($bloge->title);  
+              
+    //}
+   // $users->getProducts();
+    $blogs = BlogPost::all();
+    //writeln($users);
+  //  DB::enableQueryLog();
+    // Perform some query operations
+    
+ 
+    
+
+  //$books = new BlogPost;
+ //$books = DB::table('flights')->get();
+//$books = BlogPost::query();
+// $books = BlogPost::all();
+
+   // $books = BlogPost::with('link')->get();
+ //  $users = DB::select('select * from users where active = ?', [1]);
+ 
+ //       return view('user.index', ['users' => $users]);
+//DB::listen(function ($query) {
+  //  var_dump($query->sql);
+//});
+$blogf = $blogs;
+    //print_r($users);
+    return view('welcome',  compact( "blogf"));
+
+  
+//foreach ($books as $book) {
+ //   echo $book->id->name;
+  //  $ll = $book->id->name;
+   // print($ll);
+//}
+
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(array $data)
     {
         //
     }
