@@ -32,12 +32,18 @@ class Flight extends Model
         'testjson1',
         'testjson2'
     ];
-    protected $dateFormat = 'U';
+    
+    protected $casts = [
+        'created_at' => 'datetime:d-m-Y H:i',
+        'updated_at' => 'datetime:U',
+        'express_time' => 'datetime:U',
+    ];
+    protected $dateFormat = 'Y-m-d';
     public $incrementing = false;
     public $timestamps = false;
-    const CREATED_AT = 'creation_at';
+    const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    const DELETED_AT = 'deleted_at';
+    const DELETED_AT = 'express_time';
     protected $connection = 'pgsql';
     protected function validator(array $data)
     {
@@ -45,8 +51,8 @@ class Flight extends Model
             'id'     => 'required|max:10',
             'link' => 'sometimes|required|max:255|unique:link',
             'menu'    => 'required|menu|max:255|unique:link',
-            'creation_at' => 'required|max:255|confirmed',
-            'deleted_at' => 'required|max:255|confirmed',
+            'created_at' => 'required|max:255|confirmed',
+            'express_time' => 'required|max:255|confirmed',
             'terms'    => 'required'
         ]);
     }

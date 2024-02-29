@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\BlogPost;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('ff');
-// });
+// });findOrFail($blogrs)
+Route::get('/blogrs/{blogrs}', function ($blogrs) {
+return BlogPost::withTrashed()->findOrFail($blogrs)->delete(); // delete() , restore()
+});
+ 
+ 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
      Route::get('/dd', 'FfController@show');

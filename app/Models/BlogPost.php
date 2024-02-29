@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BlogPost extends Model
 {
-  /**   use SoftDeletes;*/
+  use SoftDeletes;
     use HasFactory;
     protected $table = 'flights';
     protected $fillable = [
@@ -20,13 +20,11 @@ class BlogPost extends Model
         'menu',
         'created_at',
         'updated_at',
-        'deleted_at',
+        'express_time',
         'options->enabled',
    ];
    protected $dates = [
-'created_at',
-'updated_at',
-'deleted_at',
+'express_time',
    ];
     protected $primaryKey = 'id';
     protected $appends = [
@@ -38,7 +36,7 @@ class BlogPost extends Model
     public $timestamps = false;
     const CREATED_AT = 'creation_at';
     const UPDATED_AT = 'updated_at';
-    const DELETED_AT = 'deleted_at';
+    const DELETED_AT = 'express_time';
     protected $connection = 'pgsql';
     protected function validator(array $data)
     {
@@ -47,16 +45,22 @@ class BlogPost extends Model
             'link' => 'sometimes|required|max:255|unique:link',
             'menu'    => 'required|menu|max:255|unique:link',
             'creation_at' => 'required|max:255|confirmed',
-            'deleted_at' => 'required|max:255|confirmed',
+            'express_time' => 'required|max:255|confirmed',
             'terms'    => 'required',
         ]);
     }
-   static public function author(): BelongsTo
-   {
-       return $this->belongsTo(BlogPost::class);
+    public function posts()
+    {
+        
+        return $this->hasMany(BlogPost::class);
     }
-   static public function getProducts() {
-        return BlogPost::all();
+    static public function authors()
+    {
+        return BlogPost::withTrashed()->get();
+    }
+
+   static public function blogs() {
+        return BlogPost::all()->find(1);
     }
     protected function create(array $data)
     {

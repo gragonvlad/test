@@ -16,7 +16,7 @@ return new class extends Migration
 		 $table->string('link');
 		 $table->string('menu');
 		 $table->timestamps();
-         $table->timestamp('deleted_at');
+        $table->integer('express_time')->nullable();
         });
     }
 

@@ -45,7 +45,7 @@ class PostController extends BaseController
               
     //}
    // $users->getProducts();
-    $blogs = BlogPost::all();
+  
     //writeln($users);
   //  DB::enableQueryLog();
     // Perform some query operations
@@ -65,16 +65,32 @@ class PostController extends BaseController
 //DB::listen(function ($query) {
   //  var_dump($query->sql);
 //});
-$blogf = $blogs;
-    //print_r($users);
-    return view('welcome',  compact( "blogf"));
+//print_r($users);
+   // $blos = $blogs->$LLF()->withTrashed()->first();
+   // $blogs = $blos;
 
-  
 //foreach ($books as $book) {
  //   echo $book->id->name;
   //  $ll = $book->id->name;
    // print($ll);
 //}
+$books = BlogPost::blogs();
+
+//$blogs = BlogPost::all();
+
+
+    
+ //   $blogs = BlogPost::find(1);
+   // $authors = BlogPost::authors();
+   $authors = \App\Models\BlogPost::withTrashed()->get();
+    $blogf = $authors;
+ //  $blos = $blogs;
+ 
+    return view('welcome',  compact( "blogf", "authors", "books"));
+
+
+  
+
 
     }
 
