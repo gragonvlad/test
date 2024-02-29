@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;
+
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -105,9 +106,12 @@ $books = BlogPost::blogs();
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+      $data = [];
+      $response = $this->json('POST', '/products', $data);
+      $data = $response->getData();
+       //
     }
 
     /**

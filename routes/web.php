@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\BlogPost;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input; 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +24,30 @@ use App\Models\BlogPost;
 Route::get('/blogrs/{blogrs}', function ($blogrs) {
 return BlogPost::withTrashed()->findOrFail($blogrs)->delete(); // delete() , restore()
 });
+Route::get('/directions', function() {
+    // $origin = Input::get('origin');
+     //$destination = Input::get('destination');
  
+    // $url = urlencode ("http://maps.googleapis.com/maps/api/directions/json?origin=" . $origin . "&destination=" . $destination . "&sensor=false");
+ 
+     //$json = json_decode(file_get_contents($url), true);
+
+     return Http::get('http://universities.hipolabs.com/search?country=United+States');
+    
+
+
+     //dd($json);
+ });
+ 
+Route::get("/send-json-request",function(Request $request ){
+     $data = response()->json([
+          'name' => 'Abigail',
+          'state' => 'CA',
+      ]);
+      
+     dump($request ->json()->get("test"));
+     dd($data);
+ });
  
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
@@ -71,6 +97,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
      Route::get('/view', 'FlightController@view');
+});
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{
+     Route::get('/fffaaaaa', 'App\Http\Controllers\Blog\PostController@store');
 });
 Route::get('/work', function() {
      return view('work');

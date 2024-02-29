@@ -118,6 +118,7 @@ public function refref()
    // return view('gg', ['name' => 'Hello woreld!'],  compact("menu", "textss", "summbanalimon", 'items'));
    $items = FlightTest::all();
    dd($items);
+   
    //return view('gg', ['name' => 'Hello woreld!'],  compact("menu", "textss", "summbanalimon", 'items'));
    return view('gg.show', compact("menu", "textss", "summbanalimon", 'items'));
 
