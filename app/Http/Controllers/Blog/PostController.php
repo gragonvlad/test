@@ -85,12 +85,12 @@ $books = BlogPost::blogs();
    // $authors = BlogPost::authors();
    $authors = BlogPost::withTrashed()->get();
 
-    $blogf = $authors;
+    $blogs = $authors;
     $users = $authors;
     $usersJson = json_encode($users);
  //  $blos = $blogs;
  
-    return view('about',  compact("blogf", "usersJson"));
+    return view('about',  compact("blogs", "usersJson"));
 
 
   

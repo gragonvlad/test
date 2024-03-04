@@ -3,8 +3,9 @@
 @section('content')
 
 
-<checkrbox :users="{{ $usersJson }}"></checkrbox>
-<ffa></ffa>
+<checkrbox :blog="{{ $usersJson }}"></checkrbox>
+
+
 
 <main>
 <h1 class="hh">Test worked</h1>
