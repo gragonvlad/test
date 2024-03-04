@@ -1,6 +1,7 @@
-
+<?php use App\Models\BlogPost; ?>
 @extends('app')
 @section('content')
+
 <html lang="ru">
 <!DOCTYPE html>
 <title>About</title>
@@ -16,8 +17,9 @@
         <a class="menu" href="#contact">Contact</a>
         <a class="menu" href="#about">About</a>
 </div>
-
+<checkrbox :users="{{ $usersJson }}"></checkrbox>
 <ffa></ffa>
+
 </body>
 </header>
 <main>

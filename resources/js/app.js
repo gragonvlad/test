@@ -6,7 +6,9 @@ let app = createApp();
 
 import PrimeVue from 'primevue/config';
 import ff from './pages/ff.vue'; 
+import checkrbox from './pages/checkrbox.vue';
 import test from './pages/test.vue'; 
+
 
 app.use(PrimeVue, {
     zIndex: {
@@ -27,5 +29,6 @@ const studentObj = JSON.parse(studentJSON);
 console.log(studentObj);
 app.component('ff', ff);
 app.component('test', test);
+app.component('checkrbox', checkrbox);
 
 app.mount('#app');

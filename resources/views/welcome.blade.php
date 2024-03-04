@@ -1,3 +1,5 @@
+@extends('app')
+@section('content')
 <!doctype html>
 
 <html>
@@ -22,17 +24,21 @@
 
             <h1 class="mb4">Blog</h1>
 
-            <header class="b mb2">{{ $books  }}ST</header>
-fwf
-            @foreach($blogf as $blog )
+            
+<main>
+
+<ff data="datall"></ff>
+</main>
+            @foreach($users as $blog )
 <table>
+<checkrbox></checkrbox>
             <div class="pa2 mb3 striped--near-white">
 
                 <header class="b mb2">{{ $blog->name }}</header>
 
                 <div class="pl2">
-
-                    <p class="mb2">id: {{ $blog->id }}</p>
+               
+               <p class="mb2">id: {{ $blog->id }}</p>
 
                     <p class="mb2">email: {{ $blog->link }}</p>
 
@@ -48,7 +54,8 @@ fwf
           
       
         </div>
-
+</main>
     </body>
 
 </html>
+@endsection

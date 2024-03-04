@@ -57,6 +57,7 @@ public function refref()
         //print "Hello world";
         $resp = 'Datastore comp $resp';
         $name = 'name';
+        $blogs = 'll';
         return view('gg', ['name' => 'Hello world!'],  compact('resp'), compact('name'));
     }
     public function create()

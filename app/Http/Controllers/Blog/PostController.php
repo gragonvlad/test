@@ -83,11 +83,14 @@ $books = BlogPost::blogs();
     
  //   $blogs = BlogPost::find(1);
    // $authors = BlogPost::authors();
-   $authors = \App\Models\BlogPost::withTrashed()->get();
+   $authors = BlogPost::withTrashed()->get();
+
     $blogf = $authors;
+    $users = $authors;
+    $usersJson = json_encode($users);
  //  $blos = $blogs;
  
-    return view('welcome',  compact( "blogf", "authors", "books"));
+    return view('about',  compact("blogf", "usersJson"));
 
 
   

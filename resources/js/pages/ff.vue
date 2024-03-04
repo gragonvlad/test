@@ -21,6 +21,7 @@ import StyleClass from 'primevue/styleclass';
 
     import SliderComponent from '../components/slidercomponent.vue';
     import NewComponent from '../components/NewComponent.vue';
+    import chekrbox from '../pages/checkrbox.vue';
     import PrimeVue from 'primevue/config';
 // import legacy from '@vitejs/plugin-legacy'
 
@@ -28,6 +29,8 @@ import StyleClass from 'primevue/styleclass';
 import Calendar from 'primevue/calendar';
 
 import { ref } from 'vue'
+
+
 
 const date = defineModel();
 //console.log(Object.keys(window));
@@ -45,29 +48,27 @@ defineExpose({
 })
 console.log(a);
 
+ 
+  
+
 const props = defineProps({
-    datall: String,
+    data: String,
     textss: String,
     numberOfMonths: Number,
     showTime: Boolean,
     showButtonBar: String,
     summbanalimon: String,
 })
+const isSelected= ref(false);
 console.log('Привет, мир!');
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('btn');
 
   console.log(btn); // HTMLButtonElement object
-
+  
   // ✅ Works as expected
-  btn.addEventListener('mousemove', () => {
-    //alert('You mousemove the button');
-    document.getElementById("btn").style.backgroundColor = "red";
-  });
-  btn.addEventListener('click', () => {
-    alert('You click the button');
-    document.getElementById("btn").style.backgroundColor = "yellow";
-  });
+ 
+ 
   
 });
 
@@ -188,13 +189,25 @@ color:white;
     
 
     export default {
-        props: ['datall', 'textss', 'summbanalimon', 'numberOfMonths', 'showTime'],
-
+        props: ['datall', 'textss', 'summbanalimon', 'numberOfMonths', 'showTime', 'data', 'statusValue', 'status'],
+        
+        data() {
+          return {
+            status: this.status,
+            checked2: true,
+        }
+    },
         methods: {
             onHover: function (event) {
                 event.target.style.color = 'red'
             }
-        },
+},
+        
+
+
+ 
+
+
         head: {
         script: [{
             src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js',

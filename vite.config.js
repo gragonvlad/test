@@ -13,7 +13,14 @@ export default defineConfig({
              'resources/css/app.css',
              'resources/js/app.js',
          ]),
-        vue(),
+        vue({
+            template: {
+            compilerOptions: {
+              isCustomElement: (tag) => {
+                return tag.startsWith('ffa') 
+              }
+            }
+          }}),
         // VueJsx(),
     ],
     // build: {

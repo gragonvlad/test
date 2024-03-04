@@ -62,11 +62,24 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
      Route::resource('/fly', 'FlightController')->names('FlightTest');
 });
-Route::get('/ffffff', function () {
+// Route::get('/ffffff', function () {
 
-     return view('welcome', ['users' => App\Models\BlogPost::all()]);
- 
- });
+//     return view('welcome', ['users' => App\Models\BlogPost::all()]);
+//Route::group(['namespace' => 'App\Http\Controllers\Blog'], function()
+//{
+//     Route::get('/ffffff', ['users' => \App\Models\BlogPost::query()->limit(10)->get()]
+ //       return view('about'));
+ //});
+ //Route::get('/ffffff', function () {
+
+   //  return view('about', ['rere' => \App\Models\BlogPost::query()->limit(10)->get()]);
+ //});
+
+ Route::group(['namespace' => 'App\Http\Controllers\Blog'], function()
+ {
+     Route::get('/ffffff', 'PostController@index', ['users' => \App\Models\BlogPost::query()->limit(10)->get()]);
+});
+
 // Route::resource('/fly', 'FlightController')->names('FlightTest');
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {

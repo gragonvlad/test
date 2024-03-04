@@ -9,6 +9,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+
 class BlogPost extends Model
 {
   use SoftDeletes;
@@ -28,8 +29,6 @@ class BlogPost extends Model
    ];
     protected $primaryKey = 'id';
     protected $appends = [
-        'testjson1',
-        'testjson2',
     ];
     protected $dateFormat = 'U';
     public $incrementing = false;
