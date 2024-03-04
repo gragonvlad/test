@@ -13,7 +13,23 @@
   
   <div id="app">
     <main class="py-4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body class="menu">
+
+    <div class="nav">
+        
+    <a class="activer" href="/"><img src="smiley.png"></a>
+        <a class="active" :hover href="#home">Home</a>
+        <a class="menu" :hover href="#news">News</a>
+        <a class="menu" :hover href="#contact">Contact</a>
+        <a class="menu" :hover href="/about">About</a>
+</div>
+
         @yield('content')
+        <footer>
+<h1>@2024</h1>
+</footer>
     </main>
     <!-- <App></App> -->
   </div>
