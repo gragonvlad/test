@@ -7,7 +7,7 @@
 
   
    <div v-for="blog in blogs" :key="blog.id">
-    <input type="checkbox" :id="blog.id" v-model="selectedBlog" true-value="да" false-value="нет" />
+    <input type="checkbox" :id="blog.id" v-model="selectedBlog" />
     <label :for="blog.id">{{ blog.id }}</label>
 
     
