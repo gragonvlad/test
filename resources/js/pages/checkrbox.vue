@@ -2,12 +2,12 @@
    <div class="flex-center position-ref full-height">
    </div>
     <div class="content">
-       <Button></Button>
+       <Button @click="senddd"></Button>
       </div>
 
   
    <div v-for="blog in blogs" :key="blog.id">
-    <input type="checkbox" :id="blog.id" v-model="selectedBlog" true-value="да" false-value="нет" @change="onChange" />
+    <input type="checkbox" :id="blog.id" v-model="selectedBlog" true-value="да" false-value="нет" />
     <label :for="blog.id">{{ blog.id }}</label>
     <label :for="blog.id">{{ blog.link }}</label>
     <label :for="blog.id">{{ blog.menu }}</label>
@@ -24,19 +24,14 @@
 </template>
     
     
-    <script setup>
-   import Button from '../components/ButtonComponent.vue';
-   const props = defineProps(['blog']);
-    import { ref } from 'vue'
-    inheritAttrs: false;
-   
-    </script>
+
     <style>
  
     
     </style>
     <script>
-    
+  import Button from '../components/ButtonComponent.vue';
+
        export default {
          created() {
    
@@ -44,23 +39,15 @@
         
         props: {
   blogs: Array,
-  selectedBlog: Array,
-  check: Array,
-  llp: Array,
 },
 
     
         data() {
         
     return { 
-        checked: true,
-        myJson: {type: Array},
-        usersJson: {type: Array},
-        blogs: {type: Array},
-        selectedBlog: {type: Array},
-        check: {type: Array},
-        llp: {type: Array},
-        
+        checked: false,
+        usersJson: [],
+        selectedBlog: [],
     }
     
   },
@@ -78,31 +65,11 @@
     },
   },
   methods: {
-   selectedBlog() {
-   
- console.log("FFF");
-      return this.selectedBlog;
-   },
-   senddd: function(){
-return console.log("FFFFA");
-   },
-   onChange(event) {
-    console.log(event.target.id);
+  
+ senddd: function() {
+console.log(this.selectBlog);
 
-    llp = JSON.stringify({ id: [event.target.id] });
-    console.log($llp);
-      this.$emit("input", event.target.checked)
-    },
-   toggleBlog: function(blog){
-    	this.selected = ((this.selected === undefined) ? true : !this.selected);
-       
-      
-    },
-    isSelected: function(obj){
-      console.log(this.value);
-    	return obj.selected;
-    }
- 
+ }
 
 
   },
