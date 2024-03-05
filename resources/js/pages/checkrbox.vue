@@ -56,7 +56,7 @@
   },
   methods: {
   
- senddd: function() {
+ senddd() {
 console.log(this.selectBlog);
 
  }
