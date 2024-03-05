@@ -9,10 +9,7 @@
    <div v-for="blog in blogs" :key="blog.id">
     <input type="checkbox" :id="blog.id" v-model="selectedBlog" true-value="да" false-value="нет" />
     <label :for="blog.id">{{ blog.id }}</label>
-    <label :for="blog.id">{{ blog.link }}</label>
-    <label :for="blog.id">{{ blog.menu }}</label>
-    <label :for="blog.id">{{ blog.created_at }}</label>
-    <label :for="blog.id">{{ blog.updated_at }}</label>
+
     
     
 </div>
