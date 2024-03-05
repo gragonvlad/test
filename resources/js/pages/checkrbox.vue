@@ -13,7 +13,7 @@
     <label :for="blog.id">{{ blog.menu }}</label>
     <label :for="blog.id">{{ blog.created_at }}</label>
     <label :for="blog.id">{{ blog.updated_at }}</label>
-    {{ selectedBlog }}
+    
     
 </div>
 <input type="submit" value="Send Request"  @click="senddd" />
@@ -57,7 +57,7 @@
   methods: {
   
  senddd() {
-console.log(this.selectBlog);
+console.log(this.selectedBlog);
 
  }
 
