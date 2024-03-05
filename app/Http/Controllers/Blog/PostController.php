@@ -87,10 +87,11 @@ $books = BlogPost::blogs();
 
     $blogs = $authors;
     $users = $authors;
+    $llp = [];
     $usersJson = json_encode($users);
  //  $blos = $blogs;
  
-    return view('about',  compact("blogs", "usersJson"));
+    return view('about',  compact("blogs", "usersJson", "llp"));
 
 
   

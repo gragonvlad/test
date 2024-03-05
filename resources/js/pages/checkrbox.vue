@@ -7,15 +7,16 @@
 
   
    <div v-for="blog in blogs" :key="blog.id">
-    <input type="checkbox" :id="blog.id" v-model="selectedBlog" true-value="да" false-value="нет" v-on:click="toggleBlog(blog)" />
+    <input type="checkbox" :id="blog.id" v-model="selectedBlog" true-value="да" false-value="нет" @change="onChange" />
     <label :for="blog.id">{{ blog.id }}</label>
     <label :for="blog.id">{{ blog.link }}</label>
     <label :for="blog.id">{{ blog.menu }}</label>
     <label :for="blog.id">{{ blog.created_at }}</label>
     <label :for="blog.id">{{ blog.updated_at }}</label>
     {{ selectedBlog }}
-    <input type="submit" value="Send Request" />
+    
 </div>
+<input type="submit" value="Send Request"  @click="senddd" />
    <div id="app"> 
 
 
@@ -45,6 +46,7 @@
   blogs: Array,
   selectedBlog: Array,
   check: Array,
+  llp: Array,
 },
 
     
@@ -57,6 +59,7 @@
         blogs: {type: Array},
         selectedBlog: {type: Array},
         check: {type: Array},
+        llp: {type: Array},
         
     }
     
@@ -71,15 +74,25 @@
       
     },
     selectedBlog: function(){
-    	return this.blog.filter(this.isSelected);
+    	return this.blog.id //данные
     },
   },
   methods: {
    selectedBlog() {
    
- console.log("FFF")
+ console.log("FFF");
       return this.selectedBlog;
    },
+   senddd: function(){
+return console.log("FFFFA");
+   },
+   onChange(event) {
+    console.log(event.target.id);
+
+    llp = JSON.stringify({ id: [event.target.id] });
+    console.log($llp);
+      this.$emit("input", event.target.checked)
+    },
    toggleBlog: function(blog){
     	this.selected = ((this.selected === undefined) ? true : !this.selected);
        
