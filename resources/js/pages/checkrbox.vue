@@ -52,17 +52,7 @@
     
   },
   computed: {
-   blogs: function () {
-      // `this` указывает на экземпляр vm
-      return this.blog
-    },
-    logclick() {
-		
-      
-    },
-    selectedBlog: function(){
-    	return this.blog.id //данные
-    },
+
   },
   methods: {
   
