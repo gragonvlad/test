@@ -7,6 +7,7 @@ let app = createApp();
 import PrimeVue from 'primevue/config';
 import ff from './pages/ff.vue'; 
 import checkrbox from './pages/checkrbox.vue';
+import checkrbox2 from './pages/checkrbox2.vue';
 import test from './pages/test.vue'; 
 
 
@@ -30,5 +31,6 @@ console.log(studentObj);
 app.component('ff', ff);
 app.component('test', test);
 app.component('checkrbox', checkrbox);
+app.component('checkrbox2', checkrbox2);
 
 app.mount('#app');
