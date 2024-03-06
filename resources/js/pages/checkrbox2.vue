@@ -63,10 +63,12 @@
  senddd() {
 console.log(this.selectedBlog);
 axios.get(`http://localhost:8000/blogrs/${this.selectedBlog}`);
+this.refresh = true 
  },
  resend() {
 console.log(this.unselectedBlog);
 axios.get(`http://localhost:8000/unblogrs/${this.unselectedBlog}`);
+this.refresh = true 
 
  }
 

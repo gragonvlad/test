@@ -8,17 +8,24 @@
       </div>
 
      <h2>DATA TO DELETE</h2> 
-   <div v-for="blog in blogs" :key="blog.id">
-    <input type="checkbox" :value="blog.id" :id="blog.id" v-model="selectedBlog" />
+   <div v-for="blog in blogs.slice(0, n)" :key="blog.id">
+    <input type="checkbox" :value="blog.id"  :id="blog.id" v-model="selectedBlog" />
     <label :for="blog.id">{{ blog.id }}</label> 
+    <label :for="blog.id">{{ blog.link }}</label> 
+    <label :for="blog.id">{{ blog.menu }}</label> 
+    
 </div>
+<button v-on:click="load">+5 Load Data</button>
 
 <h2>DATA BACK</h2>
-  <div v-for="unblog in unblogs" :key="unblog.id">
+  <div v-for="unblog in unblogs.slice(0, k)" :key="unblog.id">
     <input type="checkbox" :value="unblog.id" :id="unblog.id" v-model="unselectedBlog" />
     <label :for="unblog.id">{{ unblog.id }}</label> 
+    <label :for="unblog.id">{{ unblog.link }}</label> 
+    <label :for="unblog.id">{{ unblog.menu }}</label> 
+    
 </div>
-
+<button v-on:click="loads">+5 Load Data</button>
 
    <div id="app"> 
 
@@ -48,6 +55,7 @@
   unblogs: Array,
   selectedBlog: Array,
   unselectedBlog: Array,
+  n: String,
 },
 
     
@@ -58,22 +66,33 @@
         usersJson: [],
         selectedBlog: [],
         unselectedBlog: [],
+        k: 5,
+        n: 5,
     }
     
   },
-  computed: {
-
-  },
-  methods: {
+ mounted() {
   
+ },
+  methods: {
+
+load() {
+  this.n = this.n + 5;
+},
+loads() {
+  this.k = this.k + 5;
+},
  senddd() {
-console.log(this.selectedBlog);
+console.log(this.blog);
+
 axios.get(`http://localhost:8000/blogrs/${this.selectedBlog}`);
+location.reload(); 
  },
  resend() {
 console.log(this.unselectedBlog);
-axios.get(`http://localhost:8000/unblogrs/${this.unselectedBlog}`);
 
+axios.get(`http://localhost:8000/unblogrs/${this.unselectedBlog}`);
+location.reload(); 
  }
 
 
