@@ -2,7 +2,6 @@
    <div class="flex-center position-ref full-height">
    </div>
     <div class="content">
-   
        <Button @click="resend">DATA RESTORE</Button>
        
       </div>

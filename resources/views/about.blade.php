@@ -3,8 +3,7 @@
 @section('content')
 
 
-<checkrbox :blogs="{{ $usersJson }}"></checkrbox>
-<checkrbox2 :unblogs="{{ $unusersJson }}"></checkrbox2>
+<checkrbox :blogs="{{ $usersJson }}" :unblogs="{{ $unusersJson }}"></checkrbox>
 
 
 <main>
