@@ -83,15 +83,21 @@ $books = BlogPost::blogs();
     
  //   $blogs = BlogPost::find(1);
    // $authors = BlogPost::authors();
-   $authors = BlogPost::withTrashed()->get();
+   $authors = BlogPost::withTrashed()
+   ->where('express_time', '=', NULL)
+  ->get();
+  $unauthors = BlogPost::withTrashed()
+  ->where('express_time', '>', '1')
+ ->get();
 
     $blogs = $authors;
     $users = $authors;
     $llp = [];
     $usersJson = json_encode($users);
+    $unusersJson = json_encode($unauthors);
  //  $blos = $blogs;
  
-    return view('about',  compact("blogs", "usersJson", "llp"));
+    return view('about',  compact("blogs", "usersJson","unusersJson", "llp"));
 
 
   

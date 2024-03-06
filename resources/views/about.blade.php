@@ -4,7 +4,7 @@
 
 
 <checkrbox :blogs="{{ $usersJson }}"></checkrbox>
-
+<checkrbox :unblogs="{{ $unusersJson }}"></checkrbox>
 
 
 <main>

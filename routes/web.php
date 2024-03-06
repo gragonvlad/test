@@ -22,7 +22,12 @@ use Illuminate\Support\Facades\Input;
 //     return view('ff');
 // });findOrFail($blogrs)
 Route::get('/blogrs/{blogrs}', function ($blogrs) {
-return BlogPost::withTrashed()->findOrFail($blogrs)->delete(); // delete() , restore()
+     $ids = explode(",", $blogrs);
+return BlogPost::whereIn('id', $ids)->delete(); // delete() , restore()
+});
+Route::get('/unblogrs/{unblogrs}', function ($unblogrs) {
+     $uids = explode(",", $unblogrs);
+return BlogPost::whereIn('id', $uids)->restore(); // delete() , restore()
 });
 Route::get('/directions', function() {
     // $origin = Input::get('origin');
