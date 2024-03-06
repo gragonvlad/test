@@ -26,7 +26,7 @@
     
 </div>
 <button v-on:click="loads">+5 Load Data</button>
-
+<button v-on:click="reload">Reload Page</button>
    <div id="app"> 
 
 
@@ -55,7 +55,6 @@
   unblogs: Array,
   selectedBlog: Array,
   unselectedBlog: Array,
-  n: String,
 },
 
     
@@ -83,15 +82,19 @@ loads() {
   this.k = this.k + 5;
 },
  senddd() {
-console.log(this.blog);
+
 
 axios.get(`http://localhost:8000/blogrs/${this.selectedBlog}`);
-location.reload(); 
+
  },
  resend() {
-console.log(this.unselectedBlog);
+
 
 axios.get(`http://localhost:8000/unblogrs/${this.unselectedBlog}`);
+
+ },
+ reload() {
+
 location.reload(); 
  }
 
