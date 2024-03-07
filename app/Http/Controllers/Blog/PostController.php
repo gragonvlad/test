@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Blog;
 
 use App\Models\BlogPost;
+use App\Models\Urls;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -89,15 +90,17 @@ $books = BlogPost::blogs();
   $unauthors = BlogPost::withTrashed()
   ->where('express_time', '>', '1')
  ->get();
+ $urls = Urls::all();
 
     $blogs = $authors;
     $users = $authors;
     $llp = [];
     $usersJson = json_encode($users);
+    $urlsJson = json_encode($urls);
     $unusersJson = json_encode($unauthors);
  //  $blos = $blogs;
  
-    return view('about',  compact("blogs", "usersJson","unusersJson", "llp"));
+    return view('about',  compact("blogs", "usersJson","unusersJson", "llp", "urlsJson"));
 
 
   

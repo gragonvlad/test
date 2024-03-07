@@ -18,12 +18,17 @@
 <body class="menu">
 
     <div class="nav">
-        
-    <a class="activer" href="/"><img src="smiley.png"></a>
-        <a class="active"  href="#home">Home</a>
+      <!-- menu db and count from db -->
+      <a class="activer" href="/"><img src="smiley.png"></a>
+      <checkrbox2 :urls="{{ $urlsJson }}"></checkrbox2>
+   
+
+    
+</div>
+    <!-- <a class="menu"  href="#home">Home</a>
         <a class="menu"  href="#news">News</a>
         <a class="menu"  href="#contact">Contact</a>
-        <a class="menu" href="/about">About</a>
+        <a class="menu" href="/about">About</a> -->
 </div>
 
         @yield('content')
