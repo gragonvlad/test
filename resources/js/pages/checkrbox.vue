@@ -61,6 +61,7 @@
         data() {
         
     return { 
+      info: null,
         checked: false,
         usersJson: [],
         selectedBlog: [],
@@ -71,7 +72,7 @@
     
   },
  mounted() {
-  
+
  },
   methods: {
 

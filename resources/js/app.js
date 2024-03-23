@@ -9,7 +9,7 @@ import ff from './pages/ff.vue';
 import checkrbox from './pages/checkrbox.vue';
 import checkrbox2 from './pages/checkrbox2.vue';
 import test from './pages/test.vue'; 
-
+import Login from './auth/Login.vue';
 
 app.use(PrimeVue, {
     zIndex: {
@@ -24,13 +24,14 @@ const student = {
 	firstName: 'Anabel',
 	lastName: 'Garra'
 };
-const studentJSON = JSON.stringify(student);
-console.log(studentJSON);
-const studentObj = JSON.parse(studentJSON);
-console.log(studentObj);
+//const studentJSON = JSON.stringify(student);
+//console.log(studentJSON);
+//const studentObj = JSON.parse(studentJSON);
+//console.log(studentObj);
 app.component('ff', ff);
 app.component('test', test);
 app.component('checkrbox', checkrbox);
 app.component('checkrbox2', checkrbox2);
+app.component('Login', Login)
 
 app.mount('#app');

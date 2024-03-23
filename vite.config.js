@@ -12,6 +12,8 @@ export default defineConfig({
         laravel([
              'resources/css/app.css',
              'resources/js/app.js',
+             'resources/sass/app.scss',
+			 'resources/sass/_varriables.scss'
          ]),
         vue({
             template: {

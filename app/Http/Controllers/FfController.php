@@ -12,6 +12,14 @@ use Illuminate\Http\Request;
 
 class FfController extends Controller
 {
+    
+    public function emailver(Request $request)
+   {
+       $datas = $request->input('id');
+       $datas2 = $request->input('hash');
+        return view('ret',  compact('data', 'data2'));
+        
+    }
     public function show()
    {
         $data = 'Segoe';
