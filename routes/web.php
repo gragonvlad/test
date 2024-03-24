@@ -134,10 +134,17 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
    //  return view('about', ['rere' => \App\Models\BlogPost::query()->limit(10)->get()]);
  //});
-
+ Route::get('/email/verify', function () {
+     return view('auth.verify-email');
+ })->middleware('auth')->name('verification.notice');
+ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+     $request->fulfill();
+ 
+     return redirect('/home');
+ })->middleware(['auth', 'signed'])->name('verification.verify'); 
  Route::group(['namespace' => 'App\Http\Controllers\Blog'], function()
  {
-     Route::get('/ffffff', 'PostController@index', ['users' => \App\Models\BlogPost::query()->limit(10)->get()]);
+     Route::get('/ffffff', 'PostController@index', ['datas' => 'tt']);
 });
 
 // Route::resource('/fly', 'FlightController')->names('FlightTest');

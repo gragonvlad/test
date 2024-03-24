@@ -23,6 +23,7 @@ import StyleClass from 'primevue/styleclass';
     import NewComponent from '../components/NewComponent.vue';
     import chekrbox from '../pages/checkrbox.vue';
     import PrimeVue from 'primevue/config';
+    import axios from 'axios';
 // import legacy from '@vitejs/plugin-legacy'
 
 
@@ -31,6 +32,7 @@ import Calendar from 'primevue/calendar';
 import { ref } from 'vue'
 
 
+  
 
 const date = defineModel();
 //console.log(Object.keys(window));
@@ -202,8 +204,13 @@ color:white;
                 event.target.style.color = 'red'
             }
 },
-        
+mounted() {
 
+
+},
+actions: {
+
+},
 
  
 
@@ -216,6 +223,7 @@ color:white;
     },
        created() {
             console.log(this.datall)
+            
         },
         
 }
