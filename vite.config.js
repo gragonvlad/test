@@ -25,9 +25,9 @@ export default defineConfig({
           }}),
         // VueJsx(),
     ],
-    // build: {
-    //     manifest: 'manifest.json',
-    //   },
+     build: {
+         manifest: 'manifest.json',
+       },
     resolve: {
         alias: {
             '@': '/resources/js',

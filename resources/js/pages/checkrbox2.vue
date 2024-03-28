@@ -4,9 +4,9 @@
    <div class="content">
     <form>
     <input type="number" id="lat">
-    <button v-on:click.stop.prevent="greet" @change="start=$event.target.value">Search</button>
-    
-    <input value={this.Ld} v-model="Ld"></input>
+    <button v-on:click.stop.prevent="greet"  @click="handleSubmit">Search</button>
+    <input id="greet2" value="22" v-text="url" v-model="Ld"></input>
+    <input id="greet" value={this.Ld} v-text="url" v-model="Ld"></input>
     {{start}}
   </form>
      </div>
@@ -64,7 +64,9 @@ console.log("one cycle");
 },
 
  methods: {
-
+  handleSubmit(e) {
+    document.getElementById("greet").value="55";
+  },
   checkStatus() {
 
 
